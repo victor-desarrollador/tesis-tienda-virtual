@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "tienda virtual",
-  description: "A complete e-commerce application with Next.js and Wix",
+  description: "Una completa aplicación de comercio electrónico con Next.js y Tailwind CSS",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={inter.className}>
         <Navbar/>
         {children}
