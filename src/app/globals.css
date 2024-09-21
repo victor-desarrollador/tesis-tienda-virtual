@@ -1,3 +1,154 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --border-radius: 2rem;
+    --bg: #060D23;
+    --btn-bg: rgb(121, 23, 233);
+    --glow-size: 0.5rem;
+}
+
+#precio{
+    padding: 4px; 
+    background-color: #f9fafb; 
+    border-radius: 9999px;
+}
+
+/*estilo de carrito de compra  */
+
+#descripcion{
+        font-size: 0.875rem; /* text-sm en Tailwind (equivale a 14px) */
+        color: #3b5486; /* text-gray-500 en Tailwind */
+}
+#cantidad{
+    color: #6b7280; /* Este es el color gris medio correspondiente a gray-500 */      
+}
+
+#Eliminar{
+    color: #3b82f6;
+}
+
+#envio{
+    color: #6b7280;
+}
+
+#verCarrito {
+    min-width: 10rem;
+    min-height: 3rem;
+    text-decoration: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 0;
+    border-radius: var(--border-radius);
+    transition: all 0.5s;
+    gap: 0.5rem;
+    background: #FF6B6B; /* Color de fondo del botón */
+    border: none; /* Asegúrate de que no tenga borde */
+}
+
+#verCarrito:before {
+    content: '';
+    background: linear-gradient(to right, #FFB6B6, #FF6B6B, #FF6B3F, #FFB6B6);
+    position: absolute;
+    background-size: 300%;
+    z-index: -1;
+    filter: blur(var(--glow-size));
+    width: calc(100% + var(--glow-size));
+    height: calc(100% + var(--glow-size));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    animation: glow 25s alternate infinite;
+    transition: opacity 0.5s linear;
+}
+
+#verCarrito:active {
+    background: #FF6B3F; /* Color activo */
+}
+
+#verCarrito:hover:before {
+    opacity: 1;
+}
+
+#verCarrito:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3f82ff; /* Color de fondo del botón activo */
+    left: 0;
+    top: 0;
+    border-radius: var(--border-radius);
+}
+
+#comprar {
+    min-width: 10rem;
+    min-height: 3rem;
+    text-decoration: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 0;
+    border-radius: var(--border-radius);
+    transition: all 0.5s;
+    gap: 0.5rem;
+    background: var(--btn-bg);
+    border: none; /* Asegúrate de que no tenga borde */
+}
+
+#comprar:before {
+    content: '';
+    background: linear-gradient(to right, #B881FF, #A963F7, #8bff5d, #ffc300, #B881FF, #A963F7, #8bff5d, #ffc300, #B881FF);
+    position: absolute;
+    background-size: 300%;
+    z-index: -1;
+    filter: blur(var(--glow-size));
+    width: calc(100% + var(--glow-size));
+    height: calc(100% + var(--glow-size));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    animation: glow 25s alternate infinite;
+    transition: opacity 0.5s linear;
+}
+
+#comprar:active {
+    background: var(--btn-bg);
+}
+
+#comprar:hover:before {
+    opacity: 1;
+}
+
+#comprar:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-bg);
+    left: 0;
+    top: 0;
+    border-radius: var(--border-radius);
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
