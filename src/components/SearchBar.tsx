@@ -17,7 +17,7 @@ const handleSearch = (e:React.FormEvent<HTMLFormElement>) => {
 
 return (
     <form className="flex ic justify-between gap-4 bg-gray-100 p-2 rounded-md flex-1" onSubmit={handleSearch}>
-        <input type="text" name="name" placeholder="Busca tu producto" className='flex-1 transition-all bg-gray-100 outline-none'/>
+        <input type="text" name="name" placeholder="Busca tu producto" className='flex-1 transition-all bg-gray-100/80 outline-none p-2 rounded-md border border-gray-300 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent' />
         <button className="cursor-pointer">
             <Image src="/search.png" alt="" width={16} height={16} />
         </button>
